@@ -186,8 +186,9 @@ class SGATS:
                     to_remove.append(t)
             
             if to_remove:
-                print(f"      Fused {len(to_remove)} similar trajectories (sim > {self.theta})")
+                print(f"      🔗 FUSION: {len(to_remove)} trajectoires éliminées (Similarité > {self.theta})")
                 for t in to_remove:
+                    print(f"        ✂️  Retiré: {t.path_id} (Sim={self._calculate_similarity(best, t):.2f})")
                     remaining.remove(t)
             
             # Early termination if all original branches covered
